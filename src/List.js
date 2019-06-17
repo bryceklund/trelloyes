@@ -9,8 +9,15 @@ function List(props) {
           <h2>{props.header}</h2>
         </header>
         <div className="List-cards">
-            {props.cards.map((card) => <Card key={card.id} title={card.title} content={card.content} />)}
-            <button type="button" className="List-add-button">
+            {props.cards.map((card) => 
+            <Card 
+              key={card.id} 
+              id={card.id}
+              title={card.title} 
+              content={card.content}
+              onDeleteItem={props.onDeleteItem} 
+            />)}
+            <button type="button" className="List-add-button" onClick={props.onRandomItem}>
               + Add Random Card
             </button>
         </div>
